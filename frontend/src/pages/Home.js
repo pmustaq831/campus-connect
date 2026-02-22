@@ -14,7 +14,7 @@ function Home() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/events")
+    fetch("https://campus-connect-b9bf.onrender.com/api/events")
       .then((res) => res.json())
       .then((data) => setEvents(data))
       .catch((err) => console.error(err));
@@ -27,7 +27,7 @@ function Home() {
     }
 
     const response = await fetch(
-      "http://localhost:5000/api/events/register",
+      "https://campus-connect-b9bf.onrender.com/api/events/register",
       {
         method: "POST",
         headers: {

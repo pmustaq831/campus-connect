@@ -17,7 +17,7 @@ function OrganiserDashboard() {
   }, []);
 
   const fetchEvents = () => {
-    fetch("http://localhost:5000/api/events")
+    fetch("https://campus-connect-b9bf.onrender.com/api/events")
       .then((res) => res.json())
       .then((data) => {
         const myEvents = data.filter(
@@ -31,7 +31,7 @@ function OrganiserDashboard() {
     e.preventDefault();
 
     const response = await fetch(
-      "http://localhost:5000/api/events/add",
+      "https://campus-connect-b9bf.onrender.com/api/events/add",
       {
         method: "POST",
         headers: {
@@ -62,7 +62,7 @@ function OrganiserDashboard() {
 
   const handleDelete = async (eventId) => {
     await fetch(
-      `http://localhost:5000/api/events/delete/${eventId}`,
+      `https://campus-connect-b9bf.onrender.com/api/events/delete/${eventId}`,
       {
         method: "DELETE",
         headers: {
@@ -75,7 +75,7 @@ function OrganiserDashboard() {
   };
 
   const handleApprove = async (eventId, studentId) => {
-    await fetch("http://localhost:5000/api/events/approve", {
+    await fetch("https://campus-connect-b9bf.onrender.com/api/events/approve", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ function OrganiserDashboard() {
   };
 
   const handleReject = async (eventId, studentId) => {
-    await fetch("http://localhost:5000/api/events/reject", {
+    await fetch("https://campus-connect-b9bf.onrender.com/api/events/reject", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
